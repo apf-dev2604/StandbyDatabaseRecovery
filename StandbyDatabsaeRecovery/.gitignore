@@ -1,0 +1,13 @@
+config.ini
+queries/standbydb.sql
+.env
+*.log
+*_summary_*.log
+_refresh_summaries/
+__pycache__/
+*.pyc
+*.ora
+*.wallet
+*.sso
+*.pem
+*.key

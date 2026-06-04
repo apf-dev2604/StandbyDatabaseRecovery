@@ -1,0 +1,41 @@
+[oracle]
+sid = $ORACLE_SID
+db_home = $ORACLE_HOME
+
+[paths]
+s3_base = /mnt/some-s3bucket-localmounted/stprage/
+local_base = $ORACLE_BASE
+query_file = queries/standbydb.sql
+tar_bin = /usr/bin/tar
+
+[recovery]
+archive_pattern = *_some_archivelog_1*SOME_DATE.tar.gz
+bridge_lookback_days = 1 ## Locate historical archive logs to bridge the sync gap. The goal is to finish the daily RMAN refresh prior to receiving the new archive logs for that specific date.
+open_read_only = true
+strict_old_logs_stop = false
+fail_if_no_forward = false
+
+[cleanup]
+cleanup_local_after_success = true
+uncatalog_local_after_success = true
+cleanup_local_on_rejected_run = true
+uncatalog_local_on_rejected_run = true
+
+[mailer]
+enabled = false
+smtp_host = localhost
+smtp_port = 25
+sender = oracle-refresh@localhost
+recipients = dba-team@example.com
+username =
+password =
+use_tls = false
+
+[messager]
+enabled = false
+# Slack/Teams/Discord-style incoming webhook URL. Leave blank when disabled.
+webhook_url =
+channel =
+
+[runtime]
+log_level = INFO
