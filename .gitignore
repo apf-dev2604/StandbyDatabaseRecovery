@@ -11,3 +11,8 @@ __pycache__/
 *.sso
 *.pem
 *.key
+standbydb.sql
+queries/standbydb.sql
+*.sql
+!*.sql.example
+!queries/*.sql.example
