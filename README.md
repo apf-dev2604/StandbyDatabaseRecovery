@@ -1,4 +1,4 @@
-# Standby RMAN Archive-Log Refresh Refactor
+# Standby RMAN Archive-Log Refresh 
 
 This package is a refactored script. The original single rmanDailyRefresh Python were spliot and to make it into several script that are portable components:
 
